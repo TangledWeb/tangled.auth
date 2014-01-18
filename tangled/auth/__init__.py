@@ -31,15 +31,15 @@ def include(app):
         raise ConfigurationError('No authenticator registered')
 
     app.settings['tangled.app.handler.auth'] = auth_handler
-    app.add_representation_info_field('*/*', 'requires_authentication', False)
-    app.add_representation_info_field('*/*', 'permission', None)
-    app.add_representation_info_field('*/*', 'not_logged_in', False)
+    app.add_config_field('*/*', 'requires_authentication', False)
+    app.add_config_field('*/*', 'permission', None)
+    app.add_config_field('*/*', 'not_logged_in', False)
     app.add_request_attribute(authenticator, reify=True)
     app.add_request_attribute(authorizer, reify=True)
 
 
 def auth_handler(app, request, next_handler):
-    info = request.representation_info
+    info = request.resource_config
 
     if info.requires_authentication or info.permission:
         if not request.authenticator.user_id:
