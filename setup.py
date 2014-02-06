@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='tangled.auth',
-    version='0.1.dev0',
+    version='0.1a1',
     description='Tangled auth integration',
     url='http://tangledframework.org/',
     author='Wyatt Baldwin',
