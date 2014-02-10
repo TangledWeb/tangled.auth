@@ -15,11 +15,11 @@ setup(
         'tangled.auth.tests',
     ],
     install_requires=[
-        'tangled.web>=0.1.dev0',
+        'tangled.web>=0.1a5',
     ],
     extras_require={
         'dev': [
-            'tangled[dev]',
+            'tangled.web[dev]>=0.1a5',
         ],
     },
     entry_points="""
