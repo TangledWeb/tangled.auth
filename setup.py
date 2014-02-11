@@ -7,7 +7,7 @@ setup(
     description='Tangled auth integration',
     long_description=open('README.rst').read(),
     url='http://tangledframework.org/',
-    download_url='https://github.com/TangledWeb/tangled.auth',
+    download_url='https://github.com/TangledWeb/tangled.auth/tags',
     author='Wyatt Baldwin',
     author_email='self@wyattbaldwin.com',
     packages=[
