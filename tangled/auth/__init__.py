@@ -1,5 +1,6 @@
 from webob.exc import HTTPForbidden, HTTPUnauthorized
 
+from tangled.decorators import cached_property
 from tangled.settings import parse_settings
 from tangled.web.exc import ConfigurationError
 
@@ -34,8 +35,8 @@ def include(app):
     app.add_config_field('*/*', 'requires_authentication', False)
     app.add_config_field('*/*', 'permission', None)
     app.add_config_field('*/*', 'not_logged_in', False)
-    app.add_request_attribute(authenticator, reify=True)
-    app.add_request_attribute(authorizer, reify=True)
+    app.add_request_attribute(authenticator)
+    app.add_request_attribute(authorizer)
 
 
 def auth_handler(app, request, next_handler):
@@ -62,12 +63,14 @@ def auth_handler(app, request, next_handler):
 
 # Request attributes
 
+@cached_property
 def authenticator(request):
     app = request.app
     args = app['authenticator.args']
     return app['authenticator'](app, request, **args)
 
 
+@cached_property
 def authorizer(request):
     app = request.app
     authorizer = app['authorizer']
