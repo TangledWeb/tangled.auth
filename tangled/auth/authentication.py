@@ -1,6 +1,6 @@
 import logging
 
-from tangled.decorators import reify
+from tangled.decorators import cached_property
 
 from .abcs import AAuthenticator
 
@@ -17,7 +17,7 @@ class SessionAuthenticator(AAuthenticator):
         self.session_key = session_key
         self.user_id_validator = user_id_validator
 
-    @reify
+    @cached_property
     def user_id(self):
         user_id = self.request.session.get(self.session_key)
         if user_id is None:

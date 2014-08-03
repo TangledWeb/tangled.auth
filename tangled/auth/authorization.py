@@ -1,7 +1,5 @@
 from .abcs import AAuthorizer
 
-from tangled.decorators import reify
-
 
 class SimpleAuthorizer(AAuthorizer):
 
