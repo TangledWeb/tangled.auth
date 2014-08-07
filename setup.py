@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='tangled.auth',
-    version='0.1a4.dev0',
+    version='0.1a4',
     description='Tangled auth integration',
     long_description=open('README.rst').read(),
     url='http://tangledframework.org/',

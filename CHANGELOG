@@ -1,7 +1,8 @@
-0.1a4 (unreleased)
+0.1a4 (2014-08-06)
 ==================
 
-- No changes yet
+- Upgraded tangled.web from 0.1a5 to 0.1a9.
+- Replaced `@reify` with `@cached_property` throughout.
 
 
 0.1a3 (2014-02-09)
