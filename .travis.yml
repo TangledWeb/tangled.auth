@@ -4,8 +4,8 @@ python:
   - "3.4"
 install:
   - pip install -U setuptools
+  - pip install -U pip
   - pip install -e .[dev]
-  - pip install Sphinx
 script:
   - nosetests
   - sphinx-build -E docs docs/_build
